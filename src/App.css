@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #CED6EC; /* Light background */
+  color: #3A3B3E; /* Darker text */
+}
+
+h1, h2, h3 {
+  color: #3A3B3E;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #677CD2, #7A8EE0); /* Gradient Header */
+  color: white;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  margin: 1rem 0;
+}
+
+.highlight {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.download-btn {
+  background-color: #25B07F; /* Green Button */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #1E8F66; /* Darker Green */
+}
+
+/* Carousel Section */
+.carousel-section {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 3rem 2rem;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.carousel-btn {
+  background-color: #CED6EC; /* Light Grey-Blue */
+  border: none;
+  padding: 0.75rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: #677CD2; /* Dark Blue */
+  color: white;
+}
+
+.carousel-content {
+  max-width: 500px;
+}
+
+.carousel-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Features Section */
+.features-section {
+  padding: 3rem 2rem;
+  background-color: #F9FAFB; /* Slightly lighter background */
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: #677CD2; /* Blue Accent */
+  margin-bottom: 1rem;
+}
+
+.feature-card:nth-child(2) .feature-icon {
+  color: #25B07F; /* Green Icon for middle card */
+}
+
+.feature-card:nth-child(3) .feature-icon {
+  color: #F64E4E; /* Red Icon for privacy-focused card */
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(to right, #7A8EE0, #677CD2);
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.cta-content h2 {
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+.landing-footer {
+  background-color: #3A3B3E; /* Dark Footer */
+  color: #959698; /* Grey text */
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
