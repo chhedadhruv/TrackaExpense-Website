@@ -80,7 +80,7 @@ const App = () => {
   };
 
   const downloadApp = () => {
-    window.open("/TrackaExpense.apk", "_blank");
+    window.open(process.env.PUBLIC_URL + "/TrackaExpense.apk", "_blank");
   };
 
   return (
