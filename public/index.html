@@ -3,40 +3,42 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#677CD2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#4f46e5" />
 
     <!-- SEO Metadata -->
-    <title>TrackaExpense - Your Comprehensive Financial Companion</title>
+    <title>TrackaExpense - Smart Personal Finance Tracker | Ad-Free & Simple</title>
     <meta
       name="description"
-      content="TrackaExpense helps you manage expenses, track income, set savings goals, and split bills effortlessly. Download now to take control of your finances!"
+      content="Transform your financial management with TrackaExpense. Track expenses, monitor income, set savings goals, and split bills effortlessly. 100% ad-free, privacy-focused, and user-friendly."
     />
     <meta
       name="keywords"
-      content="expense tracker, income tracking, savings app, bill splitting, personal finance app, no ads finance app"
+      content="expense tracker, budget planner, personal finance app, money management, bill splitting, savings tracker, ad-free finance app, financial planning"
     />
     <meta name="author" content="TrackaExpense Team" />
     <link rel="canonical" href="https://trackaexpense.dhruvchheda.com" />
 
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="TrackaExpense - Your Financial Companion" />
+    <meta property="og:title" content="TrackaExpense - Smart Personal Finance Tracker | Ad-Free & Simple" />
     <meta
       property="og:description"
-      content="Manage your expenses, set savings goals, split bills with friends, and gain financial control. No ads. No notifications."
+      content="Transform your financial management with TrackaExpense. 100% ad-free, privacy-focused expense tracker with powerful features for budgeting, savings, and bill splitting."
     />
     <meta property="og:url" content="https://trackaexpense.dhruvchheda.com" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+    <meta property="og:site_name" content="TrackaExpense" />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="TrackaExpense - Take Control of Your Finances" />
+    <meta name="twitter:title" content="TrackaExpense - Smart Personal Finance Management Made Simple" />
     <meta
       name="twitter:description"
-      content="The ultimate personal finance app for tracking expenses, income, and savings. Free from ads and interruptions!"
+      content="Your all-in-one personal finance companion. Track expenses, set budgets, and achieve financial goals with zero ads and complete privacy."
     />
     <meta name="twitter:image" content="%PUBLIC_URL%/logo512.png" />
+    <meta name="twitter:creator" content="@TrackaExpense" />
 
     <!-- Favicon -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -44,7 +46,18 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <!-- Robots Meta Tag -->
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="application-name" content="TrackaExpense" />
+    <meta name="apple-mobile-web-app-title" content="TrackaExpense" />
+    
+    <!-- Preconnect to important third-party domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -58,24 +71,39 @@
         "name": "TrackaExpense",
         "operatingSystem": "Android, iOS, Web",
         "applicationCategory": "FinanceApplication",
-        "description": "TrackaExpense is a personal finance app designed to help you track expenses, income, savings goals, and split bills. Free from ads and notifications, it provides a distraction-free experience.",
-        "image": "%PUBLIC_URL%/logo512.png",
+        "description": "TrackaExpense is a comprehensive personal finance management app that helps you track expenses, set budgets, monitor savings goals, and split bills effortlessly. Enjoy a completely ad-free and privacy-focused experience.",
+        "image": "https://trackaexpense.dhruvchheda.com/logo512.png",
         "url": "https://trackaexpense.dhruvchheda.com",
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.9",
-          "ratingCount": "3200"
+          "ratingCount": "3200",
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "offers": {
           "@type": "Offer",
           "price": "0.00",
-          "priceCurrency": "USD"
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
         },
         "publisher": {
           "@type": "Organization",
           "name": "TrackaExpense",
-          "logo": "%PUBLIC_URL%/logo192.png"
-        }
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://trackaexpense.dhruvchheda.com/logo192.png"
+          }
+        },
+        "featureList": [
+          "Expense Tracking",
+          "Income Monitoring",
+          "Budget Planning",
+          "Bill Splitting",
+          "Savings Goals",
+          "Ad-Free Experience",
+          "Privacy Focused"
+        ]
       }
     </script>
   </body>

@@ -1,60 +1,83 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { 
-  FaMoneyBillWave, 
-  FaDownload, 
-  FaUser, 
-  FaBug, 
-  FaChevronLeft, 
+import {
+  FaMoneyBillWave,
+  FaDownload,
+  FaChevronLeft,
   FaChevronRight,
   FaChartBar,
-  FaChartLine,
-  FaCreditCard,
   FaPiggyBank,
   FaHandshake,
-  FaUserCog,
   FaShieldAlt,
-  FaUsers
+  FaUsers,
+  FaArrowUp,
+  FaCheck,
+  FaStar,
+  FaGithub,
+  FaTwitter,
+  FaLinkedin,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa";
 import "./App.css";
+import AboutUs from "./components/AboutUs";
+import Contact from "./components/Contact";
 
 const carouselData = [
   {
-    title: "Your Financial Dashboard",
-    description: "Stay on top of your finances with a clean, intuitive home screen showing your expenses, income, and recent transactions – all at a glance.",
-    icon: <FaChartBar size={48} />
+    title: "Income & Expense Tracking",
+    description:
+      "Easily track every rupee coming in and going out. Categorize your transactions and maintain a clear financial record.",
+    icon: <FaMoneyBillWave size={48} className="feature-gradient-icon" />,
   },
   {
-    title: "Visual Financial Insights",
-    description: "Make informed decisions with clear, interactive graphs that show your spending and earning patterns over time.",
-    icon: <FaChartLine size={48} />
+    title: "Financial Statistics",
+    description:
+      "Get detailed insights with visual statistics and reports. Understand your spending patterns and income trends over time.",
+    icon: <FaChartBar size={48} className="feature-gradient-icon" />,
   },
   {
-    title: "Effortless Transaction Management",
-    description: "Add and track your expenses and income with our streamlined input system – quick, simple, and hassle-free.",
-    icon: <FaCreditCard size={48} />
+    title: "Smart Savings Management",
+    description:
+      "Set savings goals, track your progress to help you save more effectively.",
+    icon: <FaPiggyBank size={48} className="feature-gradient-icon" />,
   },
   {
-    title: "Goal-Driven Savings",
-    description: "Set, track, and achieve your savings goals with visual progress tracking and milestone celebrations.",
-    icon: <FaPiggyBank size={48} />
+    title: "Bill Splitting Made Easy",
+    description:
+      "Split expenses with friends hassle-free. Keep track of shared expenses and settle up with ease.",
+    icon: <FaHandshake size={48} className="feature-gradient-icon" />,
+  },
+];
+
+const testimonials = [
+  {
+    name: "Arya Madan",
+    content:
+      "Perfect for tracking business expenses, income streams, and maintaining clear financial records for tax purposes.",
+    rating: 5,
   },
   {
-    title: "Simplified Bill Splitting",
-    description: "Share expenses fairly with friends using flexible splitting options – making group finances stress-free.",
-    icon: <FaHandshake size={48} />
+    name: "Zia Dongri",
+    content:
+      "Ideal for managing student budgets, tracking shared apartment expenses, and splitting costs with roommates.",
+    rating: 5,
   },
   {
-    title: "Personalized Experience",
-    description: "Customize your profile, share your feedback, and enjoy a secure, private financial management experience.",
-    icon: <FaUserCog size={48} />
-  }
+    name: "Sanaj Jadhav",
+    content:
+      "Clean, intuitive, and exactly what I needed. The savings goals feature keeps me motivated.",
+    rating: 5,
+  },
 ];
 
 const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -63,12 +86,41 @@ const App = () => {
       setShowScrollTop(window.scrollY > 300);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    document.body.classList.toggle("menu-open");
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    document.body.classList.remove("menu-open");
+  };
+
+  useEffect(() => {
+    closeMenu();
+  }, [window.location.pathname]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isMenuOpen &&
+        !event.target.closest(".nav-links") &&
+        !event.target.closest(".menu-toggle")
+      ) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isMenuOpen]);
+
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const nextSlide = () => {
@@ -76,117 +128,332 @@ const App = () => {
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + carouselData.length) % carouselData.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + carouselData.length) % carouselData.length
+    );
   };
 
-  const downloadApp = () => {
-    window.open(process.env.PUBLIC_URL + "/TrackaExpense.apk", "_blank");
+  const downloadApp = async () => {
+    setIsDownloading(true);
+    try {
+      const response = await fetch(
+        process.env.PUBLIC_URL + "/TrackaExpense.apk"
+      );
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "TrackaExpense.apk";
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+    } catch (error) {
+      console.error("Download failed:", error);
+    } finally {
+      setIsDownloading(false);
+    }
   };
 
   return (
-    <div className="app-container">
-      <section className="hero">
-        <div className="hero-content" data-aos="fade-up">
-          <h1>TrackaExpense</h1>
-          <p className="hero-subtitle">Your Path to Effortless Financial Management</p>
-          <button onClick={downloadApp} className="download-btn primary">
-            <FaDownload className="btn-icon" /> Start Your Journey
+    <Router>
+      <div className="app-container">
+        <nav className="main-nav">
+          <div className="nav-content">
+            <Link to="/" className="nav-logo" onClick={closeMenu}>
+              TrackaExpense
+            </Link>
+            <button
+              className="menu-toggle"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <FaTimes /> : <FaBars />}
+            </button>
+            <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+              <Link to="/" className="nav-link" onClick={closeMenu}>
+                Home
+              </Link>
+              <Link to="/about" className="nav-link" onClick={closeMenu}>
+                About Us
+              </Link>
+              <Link to="/contact" className="nav-link" onClick={closeMenu}>
+                Contact
+              </Link>
+            </div>
+          </div>
+        </nav>
+
+        {isMenuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <section className="hero">
+                  <div className="hero-content" data-aos="fade-up">
+                    <h1>TrackaExpense</h1>
+                    <p className="hero-subtitle">
+                      Your Path to Effortless Financial Management
+                    </p>
+                    <button
+                      onClick={downloadApp}
+                      className={`download-btn primary ${
+                        isDownloading ? "loading" : ""
+                      }`}
+                      disabled={isDownloading}
+                    >
+                      {isDownloading ? (
+                        <>
+                          <div className="loading-spinner" />
+                          Downloading...
+                        </>
+                      ) : (
+                        <>
+                          <FaDownload className="btn-icon" /> Start Your Journey
+                        </>
+                      )}
+                    </button>
+                    <div className="features-list">
+                      <div>
+                        <FaMoneyBillWave
+                          style={{
+                            fontSize: "1.25rem",
+                            color: "white",
+                            margin: 0,
+                          }}
+                        />
+                        <span>Clean & Simple</span>
+                      </div>
+                      <div>
+                        <FaShieldAlt
+                          style={{
+                            fontSize: "1.25rem",
+                            color: "white",
+                            margin: 0,
+                          }}
+                        />
+                        <span>Ad-Free Experience</span>
+                      </div>
+                      <div>
+                        <FaUsers
+                          style={{
+                            fontSize: "1.25rem",
+                            color: "white",
+                            margin: 0,
+                          }}
+                        />
+                        <span>Community-Driven</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="hero-shapes">
+                    <div className="shape shape-1"></div>
+                    <div className="shape shape-2"></div>
+                    <div className="shape shape-3"></div>
+                  </div>
+                </section>
+
+                <section className="features" data-aos="fade-up">
+                  <h2>Experience Stress-Free Finance Management</h2>
+                  <div className="features-grid">
+                    <div
+                      className="feature-card"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                    >
+                      <div className="feature-icon">
+                        <FaMoneyBillWave />
+                      </div>
+                      <h3>Income & Expense Tracking</h3>
+                      <p>
+                        Keep track of your finances with our comprehensive
+                        tracking system. Never miss a transaction again.
+                      </p>
+                      <ul className="feature-list">
+                        <li>
+                          <FaCheck /> Multiple Categories
+                        </li>
+                        <li>
+                          <FaCheck /> Transaction History
+                        </li>
+                        <li>
+                          <FaCheck /> Custom Categories
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      className="feature-card"
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                    >
+                      <div className="feature-icon">
+                        <FaPiggyBank />
+                      </div>
+                      <h3>Savings Management</h3>
+                      <p>
+                        Set and achieve your savings goals with our smart
+                        savings management tools.
+                      </p>
+                      <ul className="feature-list">
+                        <li>
+                          <FaCheck /> Savings Goals
+                        </li>
+                        <li>
+                          <FaCheck /> Progress Tracking
+                        </li>
+                        <li>
+                          <FaCheck /> Collaborative Savings
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      className="feature-card"
+                      data-aos="fade-up"
+                      data-aos-delay="400"
+                    >
+                      <div className="feature-icon">
+                        <FaHandshake />
+                      </div>
+                      <h3>Bill Splitting</h3>
+                      <p>
+                        Split bills with friends effortlessly. Keep track of
+                        shared expenses and settle up without any hassle.
+                      </p>
+                      <ul className="feature-list">
+                        <li>
+                          <FaCheck /> Group Expenses
+                        </li>
+                        <li>
+                          <FaCheck /> Easy Settlement
+                        </li>
+                        <li>
+                          <FaCheck /> Split History
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+
+                <section className="carousel" data-aos="fade-up">
+                  <h2>Discover Your Financial Tools</h2>
+                  <div className="carousel-container">
+                    <button
+                      className="carousel-btn prev"
+                      onClick={prevSlide}
+                      aria-label="Previous slide"
+                    >
+                      <FaChevronLeft />
+                    </button>
+                    <div className="carousel-content">
+                      {carouselData[currentIndex].icon}
+                      <h3>{carouselData[currentIndex].title}</h3>
+                      <p>{carouselData[currentIndex].description}</p>
+                    </div>
+                    <button
+                      className="carousel-btn next"
+                      onClick={nextSlide}
+                      aria-label="Next slide"
+                    >
+                      <FaChevronRight />
+                    </button>
+                  </div>
+                  <div className="carousel-indicators">
+                    {carouselData.map((_, index) => (
+                      <button
+                        key={index}
+                        className={`indicator ${
+                          index === currentIndex ? "active" : ""
+                        }`}
+                        onClick={() => setCurrentIndex(index)}
+                        aria-label={`Go to slide ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                </section>
+
+                <section className="testimonials" data-aos="fade-up">
+                  <h2>What Our Users Say</h2>
+                  <div className="testimonials-grid">
+                    {testimonials.map((testimonial, index) => (
+                      <div
+                        key={index}
+                        className="testimonial-card"
+                        data-aos="fade-up"
+                        data-aos-delay={index * 100}
+                      >
+                        <div className="testimonial-rating">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <FaStar key={i} className="star-icon" />
+                          ))}
+                        </div>
+                        <p className="testimonial-content">
+                          {testimonial.content}
+                        </p>
+                        <div className="testimonial-author">
+                          <strong>{testimonial.name}</strong>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="cta" data-aos="fade-up">
+                  <div className="cta-content">
+                    <h2>Ready to Transform Your Financial Management?</h2>
+                    <p>
+                      Join us and experience a simpler way to handle your money.
+                      No ads, no distractions – just pure financial focus.
+                    </p>
+                    <button
+                      onClick={downloadApp}
+                      className={`download-btn secondary ${
+                        isDownloading ? "loading" : ""
+                      }`}
+                      disabled={isDownloading}
+                    >
+                      {isDownloading ? (
+                        <>
+                          <div className="loading-spinner" />
+                          Downloading...
+                        </>
+                      ) : (
+                        <>
+                          <FaDownload className="btn-icon" /> Download Now
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </section>
+              </>
+            }
+          />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+
+        <footer className="footer">
+          <div className="footer-bottom">
+            <div className="footer-bottom-content">
+              <p style={{ textAlign: 'center', width: '100%' }}>
+                © {new Date().getFullYear()} TrackaExpense | Coming Soon to Play Store
+              </p>
+            </div>
+          </div>
+        </footer>
+
+        {showScrollTop && (
+          <button
+            className="scroll-top"
+            onClick={scrollToTop}
+            aria-label="Scroll to top"
+          >
+            <FaArrowUp />
           </button>
-          <div className="features-list">
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <FaMoneyBillWave color="#fff" className="feature-icon" />
-              <span>Clean & Simple</span>
-            </div>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <FaShieldAlt color="#fff" className="feature-icon" />
-              <span>Ad-Free Experience</span>
-            </div>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <FaUsers color="#fff" className="feature-icon" />
-              <span>Community-Driven</span>
-              </div>
-          </div>
-        </div>
-        <div className="hero-shapes">
-          <div className="shape shape-1"></div>
-          <div className="shape shape-2"></div>
-          <div className="shape shape-3"></div>
-        </div>
-      </section>
-
-      <section className="features" data-aos="fade-up">
-        <h2>Experience Stress-Free Finance Management</h2>
-        <div className="features-grid">
-          <div className="feature-card" data-aos="fade-up" data-aos-delay="100">
-            <div className="feature-icon">
-              <FaBug />
-            </div>
-            <h3>Community-Driven Improvements</h3>
-            <p>Share your thoughts and help shape the future of TrackaExpense. Your feedback directly influences our updates and improvements.</p>
-          </div>
-          <div className="feature-card" data-aos="fade-up" data-aos-delay="200">
-            <div className="feature-icon">
-              <FaMoneyBillWave />
-            </div>
-            <h3>Smart Money Management</h3>
-            <p>Take control of your finances with intuitive expense tracking, income monitoring, and savings management tools.</p>
-          </div>
-          <div className="feature-card" data-aos="fade-up" data-aos-delay="300">
-            <div className="feature-icon">
-              <FaUser />
-            </div>
-            <h3>Distraction-Free Focus</h3>
-            <p>Enjoy a clean, ad-free environment with no interruptions. Your financial journey, your way – without any unnecessary notifications.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="carousel" data-aos="fade-up">
-        <h2>Discover Your Financial Tools</h2>
-        <div className="carousel-container">
-          <button className="carousel-btn prev" onClick={prevSlide}>
-            <FaChevronLeft />
-          </button>
-          <div className="carousel-content">
-            <div className="screen-icon">{carouselData[currentIndex].icon}</div>
-            <h3>{carouselData[currentIndex].title}</h3>
-            <p>{carouselData[currentIndex].description}</p>
-          </div>
-          <button className="carousel-btn next" onClick={nextSlide}>
-            <FaChevronRight />
-          </button>
-        </div>
-        <div className="carousel-indicators">
-          {carouselData.map((_, index) => (
-            <span
-              key={index}
-              className={`indicator ${index === currentIndex ? 'active' : ''}`}
-              onClick={() => setCurrentIndex(index)}
-            ></span>
-          ))}
-        </div>
-      </section>
-
-      <section className="cta" data-aos="fade-up">
-        <div className="cta-content">
-          <h2>Ready to Transform Your Financial Management?</h2>
-          <p>Join us and experience a simpler way to handle your money. No ads, no distractions – just pure financial focus.</p>
-          <button onClick={downloadApp} className="download-btn secondary">
-            <FaDownload className="btn-icon" /> Download Now
-          </button>
-        </div>
-      </section>
-
-      <footer className="footer">
-        <p>© 2025 TrackaExpense | Simplifying Your Financial Journey</p>
-      </footer>
-
-      {showScrollTop && (
-        <button className="scroll-top" onClick={scrollToTop}>
-          <FaChevronLeft className="rotate-90" />
-        </button>
-      )}
-    </div>
+        )}
+      </div>
+    </Router>
   );
 };
 
