@@ -1,0 +1,210 @@
+/* Store Download Buttons for Homepage */
+.download-buttons-hero,
+.download-buttons-cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.store-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.store-download-btn.coming-soon {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.store-download-btn.coming-soon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer-homepage 2s infinite;
+}
+
+@keyframes shimmer-homepage {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.download-btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.download-btn-title {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.download-btn-store {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.coming-soon-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+}
+
+.temporary-download,
+.temporary-download-cta {
+  margin-top: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.temp-download-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+}
+
+.temporary-download .download-btn,
+.temporary-download-cta .download-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  min-width: 180px;
+  max-width: 240px;
+  text-align: center;
+}
+
+.temporary-download .download-btn:disabled,
+.temporary-download-cta .download-btn:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+.temporary-download .download-btn:not(:disabled),
+.temporary-download-cta .download-btn:not(:disabled) {
+  cursor: pointer !important;
+}
+
+/* Ensure proper cursor behavior for APK download buttons */
+.temporary-download .download-btn,
+.temporary-download-cta .download-btn {
+  cursor: pointer !important;
+}
+
+.temporary-download .download-btn.loading,
+.temporary-download-cta .download-btn.loading {
+  cursor: not-allowed !important;
+}
+
+.temporary-download .download-btn:hover:not(:disabled),
+.temporary-download-cta .download-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  cursor: pointer !important;
+}
+
+.temporary-download .download-btn:active:not(:disabled),
+.temporary-download-cta .download-btn:active:not(:disabled) {
+  transform: translateY(0);
+  cursor: pointer !important;
+}
+
+.temporary-download .download-btn:hover:disabled,
+.temporary-download-cta .download-btn:hover:disabled {
+  cursor: not-allowed !important;
+  transform: none;
+}
+
+/* CTA section store buttons styling */
+.cta .download-buttons-cta .store-download-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: #64748b;
+  border: 2px dashed #cbd5e1;
+  backdrop-filter: none;
+}
+
+.cta .download-buttons-cta .download-btn-title {
+  color: #64748b;
+}
+
+.cta .download-buttons-cta .download-btn-store {
+  color: #475569;
+}
+
+.cta .download-buttons-cta .store-download-btn.coming-soon::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+}
+
+/* Mobile responsive for store buttons */
+@media (max-width: 768px) {
+  .download-buttons-hero,
+  .download-buttons-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .store-download-btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .store-download-btn {
+    padding: 0.75rem 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .download-btn-store {
+    font-size: 1rem;
+  }
+}

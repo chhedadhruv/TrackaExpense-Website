@@ -20,10 +20,14 @@ import {
   FaLinkedin,
   FaBars,
   FaTimes,
+  FaGooglePlay,
+  FaApple,
 } from "react-icons/fa";
 import "./App.css";
+import "./StoreButtons.css";
 import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 const carouselData = [
   {
@@ -180,6 +184,9 @@ const App = () => {
               <Link to="/contact" className="nav-link" onClick={closeMenu}>
                 Contact
               </Link>
+              <Link to="/privacy" className="nav-link" onClick={closeMenu}>
+                Privacy
+              </Link>
             </div>
           </div>
         </nav>
@@ -197,24 +204,45 @@ const App = () => {
                     <p className="hero-subtitle">
                       Your Path to Effortless Financial Management
                     </p>
-                    <button
-                      onClick={downloadApp}
-                      className={`download-btn primary ${
-                        isDownloading ? "loading" : ""
-                      }`}
-                      disabled={isDownloading}
-                    >
-                      {isDownloading ? (
-                        <>
-                          <div className="loading-spinner" />
-                          Downloading...
-                        </>
-                      ) : (
-                        <>
-                          <FaDownload className="btn-icon" /> Start Your Journey
-                        </>
-                      )}
-                    </button>
+                    <div className="download-buttons-hero">
+                      <button className="store-download-btn coming-soon" disabled>
+                        <FaGooglePlay size={24} />
+                        <div className="download-btn-text">
+                          <span className="download-btn-title">Get it on</span>
+                          <span className="download-btn-store">Google Play</span>
+                          <span className="coming-soon-badge">Coming Soon</span>
+                        </div>
+                      </button>
+                      <button className="store-download-btn coming-soon" disabled>
+                        <FaApple size={24} />
+                        <div className="download-btn-text">
+                          <span className="download-btn-title">Download on the</span>
+                          <span className="download-btn-store">App Store</span>
+                          <span className="coming-soon-badge">Coming Soon</span>
+                        </div>
+                      </button>
+                    </div>
+                    <div className="temporary-download">
+                      <p className="temp-download-text">For now, try our Android APK:</p>
+                      <button
+                        onClick={downloadApp}
+                        className={`download-btn secondary ${
+                          isDownloading ? "loading" : ""
+                        }`}
+                        disabled={isDownloading}
+                      >
+                        {isDownloading ? (
+                          <>
+                            <div className="loading-spinner" />
+                            Downloading...
+                          </>
+                        ) : (
+                          <>
+                            <FaDownload className="btn-icon" /> Download APK
+                          </>
+                        )}
+                      </button>
+                    </div>
                     <div className="features-list">
                       <div>
                         <FaMoneyBillWave
@@ -406,24 +434,44 @@ const App = () => {
                       Join us and experience a simpler way to handle your money.
                       No ads, no distractions – just pure financial focus.
                     </p>
-                    <button
-                      onClick={downloadApp}
-                      className={`download-btn secondary ${
-                        isDownloading ? "loading" : ""
-                      }`}
-                      disabled={isDownloading}
-                    >
-                      {isDownloading ? (
-                        <>
-                          <div className="loading-spinner" />
-                          Downloading...
-                        </>
-                      ) : (
-                        <>
-                          <FaDownload className="btn-icon" /> Download Now
-                        </>
-                      )}
-                    </button>
+                    <div className="download-buttons-cta">
+                      <button className="store-download-btn coming-soon" disabled>
+                        <FaGooglePlay size={24} />
+                        <div className="download-btn-text">
+                          <span className="download-btn-title">Get it on</span>
+                          <span className="download-btn-store">Google Play</span>
+                          <span className="coming-soon-badge">Coming Soon</span>
+                        </div>
+                      </button>
+                      <button className="store-download-btn coming-soon" disabled>
+                        <FaApple size={24} />
+                        <div className="download-btn-text">
+                          <span className="download-btn-title">Download on the</span>
+                          <span className="download-btn-store">App Store</span>
+                          <span className="coming-soon-badge">Coming Soon</span>
+                        </div>
+                      </button>
+                    </div>
+                    <div className="temporary-download-cta">
+                      <button
+                        onClick={downloadApp}
+                        className={`download-btn primary ${
+                          isDownloading ? "loading" : ""
+                        }`}
+                        disabled={isDownloading}
+                      >
+                        {isDownloading ? (
+                          <>
+                            <div className="loading-spinner" />
+                            Downloading...
+                          </>
+                        ) : (
+                          <>
+                            <FaDownload className="btn-icon" /> Try APK Version
+                          </>
+                        )}
+                      </button>
+                    </div>
                   </div>
                 </section>
               </>
@@ -431,6 +479,7 @@ const App = () => {
           />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
 
         <footer className="footer">
@@ -438,6 +487,15 @@ const App = () => {
             <div className="footer-bottom-content">
               <p style={{ textAlign: 'center', width: '100%' }}>
                 © {new Date().getFullYear()} TrackaExpense | Coming Soon to Play Store
+              </p>
+              <p style={{ textAlign: 'center', width: '100%', marginTop: '0.5rem', fontSize: '0.9rem' }}>
+                <Link to="/privacy" style={{ color: '#6366f1', textDecoration: 'none' }}>
+                  Privacy Policy
+                </Link>
+                {' | '}
+                <Link to="/contact" style={{ color: '#6366f1', textDecoration: 'none' }}>
+                  Contact Us
+                </Link>
               </p>
             </div>
           </div>
