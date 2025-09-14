@@ -28,6 +28,7 @@ import "./StoreButtons.css";
 import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import DeleteAccount from "./components/DeleteAccount";
 
 const carouselData = [
   {
@@ -480,6 +481,7 @@ const App = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/delete-account" element={<DeleteAccount />} />
         </Routes>
 
         <footer className="footer">
@@ -495,6 +497,10 @@ const App = () => {
                 {' | '}
                 <Link to="/contact" style={{ color: '#6366f1', textDecoration: 'none' }}>
                   Contact Us
+                </Link>
+                {' | '}
+                <Link to="/delete-account" style={{ color: '#6366f1', textDecoration: 'none' }}>
+                  Delete Account
                 </Link>
               </p>
             </div>
