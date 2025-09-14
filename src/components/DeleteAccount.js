@@ -23,7 +23,7 @@ const DeleteAccount = () => {
     {
       icon: <FaUserCog />,
       step: "2", 
-      title: "Go to Profile → Account Settings → Delete Account",
+      title: "Go to Profile → Account Actions → Delete Account",
       description: "Navigate through the settings menu"
     },
     {
