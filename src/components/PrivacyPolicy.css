@@ -118,11 +118,41 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+}
+
+.download-btn:not(.coming-soon) {
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.download-btn:not(.coming-soon):hover {
+  background: rgba(99, 102, 241, 0.15);
+  color: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 .download-btn.coming-soon {
-  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-  border: 2px dashed #cbd5e1;
+  background: rgba(99, 102, 241, 0.05);
+  border: 2px solid rgba(99, 102, 241, 0.1);
+  opacity: 0.7;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.download-btn.coming-soon .download-btn-title {
+  color: #6366f1 !important;
+}
+
+.download-btn.coming-soon .download-btn-store {
+  color: #4f46e5 !important;
 }
 
 .download-btn.coming-soon::before {
@@ -158,6 +188,22 @@
   font-size: 1.1rem;
   font-weight: 600;
   color: #475569;
+}
+
+.download-btn:not(.coming-soon) .download-btn-title {
+  color: #6366f1;
+}
+
+.download-btn:not(.coming-soon) .download-btn-store {
+  color: #4f46e5;
+}
+
+.download-btn:not(.coming-soon):hover .download-btn-title {
+  color: #4f46e5;
+}
+
+.download-btn:not(.coming-soon):hover .download-btn-store {
+  color: #3730a3;
 }
 
 .coming-soon-badge {

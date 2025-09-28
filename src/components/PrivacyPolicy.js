@@ -521,18 +521,22 @@ Legal & Regulatory Contacts:
                 <span className="coming-soon-badge">Coming Soon</span>
               </div>
             </button>
-            <button className="download-btn coming-soon" disabled>
+            <a 
+              href="https://apps.apple.com/us/app/trackaexpense/id6752925670" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="download-btn"
+            >
               <FaApple size={24} />
               <div className="download-btn-text">
                 <span className="download-btn-title">Download on the</span>
                 <span className="download-btn-store">App Store</span>
-                <span className="coming-soon-badge">Coming Soon</span>
               </div>
-            </button>
+            </a>
           </div>
           <p className="download-note">
-            We're working hard to bring TrackaExpense to mobile app stores. 
-            Stay tuned for updates!
+            TrackaExpense is now available on the App Store! 
+            Google Play Store coming soon.
           </p>
         </div>
 

@@ -214,14 +214,18 @@ const App = () => {
                           <span className="coming-soon-badge">Coming Soon</span>
                         </div>
                       </button>
-                      <button className="store-download-btn coming-soon" disabled>
+                      <a 
+                        href="https://apps.apple.com/us/app/trackaexpense/id6752925670" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="store-download-btn"
+                      >
                         <FaApple size={24} />
                         <div className="download-btn-text">
                           <span className="download-btn-title">Download on the</span>
                           <span className="download-btn-store">App Store</span>
-                          <span className="coming-soon-badge">Coming Soon</span>
                         </div>
-                      </button>
+                      </a>
                     </div>
                     <div className="temporary-download">
                       <p className="temp-download-text">For now, try our Android APK:</p>
@@ -444,14 +448,18 @@ const App = () => {
                           <span className="coming-soon-badge">Coming Soon</span>
                         </div>
                       </button>
-                      <button className="store-download-btn coming-soon" disabled>
+                      <a 
+                        href="https://apps.apple.com/us/app/trackaexpense/id6752925670" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="store-download-btn"
+                      >
                         <FaApple size={24} />
                         <div className="download-btn-text">
                           <span className="download-btn-title">Download on the</span>
                           <span className="download-btn-store">App Store</span>
-                          <span className="coming-soon-badge">Coming Soon</span>
                         </div>
-                      </button>
+                      </a>
                     </div>
                     <div className="temporary-download-cta">
                       <button
