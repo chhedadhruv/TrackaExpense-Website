@@ -206,14 +206,18 @@ const App = () => {
                       Your Path to Effortless Financial Management
                     </p>
                     <div className="download-buttons-hero">
-                      <button className="store-download-btn coming-soon" disabled>
+                      <a 
+                        href="https://play.google.com/store/apps/details?id=com.trackaexpense" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="store-download-btn"
+                      >
                         <FaGooglePlay size={24} />
                         <div className="download-btn-text">
                           <span className="download-btn-title">Get it on</span>
                           <span className="download-btn-store">Google Play</span>
-                          <span className="coming-soon-badge">Coming Soon</span>
                         </div>
-                      </button>
+                      </a>
                       <a 
                         href="https://apps.apple.com/us/app/trackaexpense/id6752925670" 
                         target="_blank" 
@@ -440,14 +444,18 @@ const App = () => {
                       No ads, no distractions – just pure financial focus.
                     </p>
                     <div className="download-buttons-cta">
-                      <button className="store-download-btn coming-soon" disabled>
+                      <a 
+                        href="https://play.google.com/store/apps/details?id=com.trackaexpense" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="store-download-btn"
+                      >
                         <FaGooglePlay size={24} />
                         <div className="download-btn-text">
                           <span className="download-btn-title">Get it on</span>
                           <span className="download-btn-store">Google Play</span>
-                          <span className="coming-soon-badge">Coming Soon</span>
                         </div>
-                      </button>
+                      </a>
                       <a 
                         href="https://apps.apple.com/us/app/trackaexpense/id6752925670" 
                         target="_blank" 
@@ -496,7 +504,7 @@ const App = () => {
           <div className="footer-bottom">
             <div className="footer-bottom-content">
               <p style={{ textAlign: 'center', width: '100%' }}>
-                © {new Date().getFullYear()} TrackaExpense | Coming Soon to Play Store
+                © {new Date().getFullYear()} TrackaExpense | Available on Play Store
               </p>
               <p style={{ textAlign: 'center', width: '100%', marginTop: '0.5rem', fontSize: '0.9rem' }}>
                 <Link to="/privacy" style={{ color: '#6366f1', textDecoration: 'none' }}>

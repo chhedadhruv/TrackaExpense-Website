@@ -513,14 +513,18 @@ Legal & Regulatory Contacts:
         <div className="download-buttons-section">
           <h2>Get TrackaExpense</h2>
           <div className="download-buttons-container">
-            <button className="download-btn coming-soon" disabled>
+            <a 
+              href="https://play.google.com/store/apps/details?id=com.trackaexpense" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="download-btn"
+            >
               <FaGooglePlay size={24} />
               <div className="download-btn-text">
                 <span className="download-btn-title">Get it on</span>
                 <span className="download-btn-store">Google Play</span>
-                <span className="coming-soon-badge">Coming Soon</span>
               </div>
-            </button>
+            </a>
             <a 
               href="https://apps.apple.com/us/app/trackaexpense/id6752925670" 
               target="_blank" 
@@ -535,8 +539,7 @@ Legal & Regulatory Contacts:
             </a>
           </div>
           <p className="download-note">
-            TrackaExpense is now available on the App Store! 
-            Google Play Store coming soon.
+            TrackaExpense is now available on both the App Store and Google Play Store!
           </p>
         </div>
 
