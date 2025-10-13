@@ -50,392 +50,323 @@ Your Privacy Rights:
 • You have complete control over your data
 • Account deletion is available instantly through the app
 • All data can be permanently removed at any time
-• We never sell your personal information to third parties
-• Your financial data remains private and secure
+• We never sell your personal information
 
-By using TrackaExpense, you agree to the collection and use of information in accordance with this policy. We are transparent about our data practices and committed to earning your trust through responsible data handling.`
+By using TrackaExpense, you agree to the collection and use of information in accordance with this policy.`
     },
     {
       id: 'data_collection',
       title: 'Information We Collect',
       icon: FaDatabase,
-      content: `We collect the following types of information to provide you with the best expense tracking experience:
+      content: `We collect the following types of information:
 
 Personal Information:
-• Name and email address (required for account creation and verification)
-• Phone number (optional, for enhanced account security)
-• Profile pictures (optional, stored securely on our servers)
-• Account preferences and settings
+• Name and email address (required for account creation)
+• Phone number (optional, for account verification)
+• Profile pictures (optional, stored securely)
+• Google account information (when using Google Sign-In)
+• Apple ID information (when using Apple Sign-In)
 
 Financial Data:
 • Income and expense records (titles, descriptions, amounts, categories, dates)
-• Receipt images and attachments (stored securely with encryption)
-• Account balance information and transaction history
-• Spending patterns and financial statistics (used for insights)
-• Budget goals and savings targets
+• Receipt images and attachments
+• Account balance information
+• Transaction history and spending patterns
 
 Group & Social Data:
-• Group memberships for expense splitting functionality
+• Group memberships for expense splitting
 • Shared expense details and payment records
 • Split calculations and settlement information
-• User interactions within shared groups
+
+Authentication Data:
+• Email/password credentials (for traditional sign-in)
+• Google account credentials (for Google Sign-In)
+• Apple ID credentials (for Apple Sign-In)
+• Authentication tokens and session data
+• Account verification status
 
 Technical Information:
-• Device information (type, operating system, app version)
-• App usage patterns and navigation data (for improving user experience)
-• Authentication tokens and session data (for security)
+• Device information and operating system
+• App usage patterns and navigation data
 • Local app preferences and settings
-• Crash reports and error logs (for debugging and improvements)
+• Network information for connectivity
 
-Device Permissions (with your explicit consent):
-• Camera access (for capturing receipt photos)
-• Photo library access (for selecting receipt images)
-• Contact access (optional, for inviting friends to groups)
-• Push notifications (for important account updates)`
+Device Permissions:
+• Camera access (for receipt photos)
+• Photo library access (for receipt images)
+• Phone permissions (for device identification and security)
+• Storage access (for saving and retrieving app data)`
     },
     {
       id: 'data_usage',
       title: 'How We Use Your Information',
       icon: FaCog,
-      content: `We use your information solely to provide and improve our expense tracking services:
+      content: `We use your information to:
 
 Core Functionality:
-• Provide comprehensive expense tracking and financial management tools
-• Process and categorize your income and expense transactions
-• Calculate spending statistics and generate financial insights
-• Enable expense splitting with friends, family, and groups
-• Synchronize your data across multiple devices securely
+• Provide expense tracking and financial management services
+• Process and store your income and expense transactions
+• Calculate spending statistics and financial insights
+• Enable expense splitting with friends and groups
 
 Account Management:
-• Create and maintain your secure user account
-• Authenticate your identity and protect against unauthorized access
-• Send important account-related notifications and updates
-• Provide responsive customer support when you need assistance
-• Process account recovery requests securely
+• Create and maintain your user account
+• Authenticate your identity through email/password, Google Sign-In, or Apple Sign-In
+• Secure your account with multi-factor authentication options
+• Send important account-related notifications
+• Provide customer support when needed
 
-App Improvement & Analytics:
-• Analyze usage patterns to enhance app functionality and user experience
-• Identify and resolve technical issues and bugs
-• Develop new features based on user feedback and needs
-• Conduct A/B testing for improved user interfaces
-• Generate anonymized statistics for product development
+Authentication Services:
+• Process Google Sign-In authentication requests
+• Process Apple Sign-In authentication requests
+• Verify user identity through Google's and Apple's secure authentication systems
+• Manage account linking between email, Google, and Apple accounts
+• Handle account recovery and verification processes
+
+App Improvement:
+• Analyze usage patterns to improve app functionality
+• Identify and fix technical issues
+• Develop new features based on user needs
+• Optimize performance and user experience
 
 Communication:
-• Send account verification and password reset emails
-• Provide customer support responses and assistance
-• Share important app updates and feature announcements
-• Send optional promotional content (with your consent)
+• Send account verification emails
+• Provide password reset functionality
+• Send notifications about account security
+• Respond to feedback and support requests
 
-Data Protection Commitment:
-We do NOT:
-• Sell your personal or financial data to advertisers or third parties
-• Use your financial information for advertising purposes
-• Share your data with data brokers or marketing companies
-• Access your data for purposes other than service provision`
+We do NOT use your financial data for advertising or sell your information to third parties.`
     },
     {
       id: 'data_storage',
       title: 'Data Storage & Security',
       icon: FaLock,
-      content: `Your data security is our highest priority. We implement industry-leading security measures:
-
-Cloud Storage Infrastructure:
+      content: `Cloud Storage:
 Your data is securely stored using Google Firebase services:
-• Authentication managed by Firebase Auth with enterprise-grade security
-• Financial records stored in Firebase Firestore with encryption at rest
-• Receipt images stored in Firebase Storage with secure access controls
-• All data transmission encrypted using TLS 1.3 protocols
-• Regular security audits and compliance with industry standards
+• Authentication data is handled by Firebase Auth (including Google Sign-In and Apple Sign-In)
+• Financial records are stored in Firebase Firestore
+• Receipt images are stored in Firebase Storage
+• All data transmission is encrypted using industry-standard protocols
 
 Local Storage:
-Limited data stored locally on your device for performance:
-• App preferences and personalization settings
-• Temporary session information (automatically cleared)
-• Cached data for offline functionality
-• Onboarding status and tutorial progress
+Some data is stored locally on your device:
+• App preferences and settings
+• Temporary session information
+• Onboarding status
+• Authentication tokens (encrypted)
 
 Security Measures:
-• End-to-end encryption for all data transmission
-• Multi-factor authentication support for enhanced account security
-• Regular security updates and vulnerability patching
-• Access controls with role-based permissions
-• Automated intrusion detection and monitoring
-• Secure API endpoints with rate limiting
-• Regular security assessments and penetration testing
+• End-to-end encryption for data transmission
+• Secure authentication using Firebase Auth, Google Sign-In, and Apple Sign-In
+• OAuth 2.0 protocol for Google and Apple authentication
+• Regular security updates and monitoring
+• Access controls and user permission systems
+• Secure file storage with user-specific access
+• Optional phone number verification for enhanced security
 
-Data Retention & Lifecycle:
-• Your data is retained while your account remains active
-• Instant account deletion available through app's "Delete Account" feature
+Google Sign-In Security:
+• Uses Google's secure OAuth 2.0 authentication
+• No passwords stored for Google-authenticated accounts
+• Automatic token refresh and session management
+• Google's advanced security features and fraud detection
+
+Apple Sign-In Security:
+• Uses Apple's secure OAuth 2.0 authentication
+• No passwords stored for Apple-authenticated accounts
+• Automatic token refresh and session management
+• Apple's advanced security features and privacy protection
+
+Data Retention:
+• Your data is retained while your account is active
+• You can delete your account instantly through the app's "Account Actions" feature
 • Complete data removal includes all transactions, receipts, and associated files
-• Backup data is permanently deleted within 30 days of account deletion
-• Individual data elements can be selectively deleted upon request
-• Inactive accounts may be archived after 2 years of no activity
-• All deleted data is unrecoverable to ensure complete privacy
-
-Geographic Data Storage:
-• Primary data centers located in secure, compliant facilities
-• Data residency options available for users in specific regions
-• Regular backups stored in geographically distributed locations
-• Compliance with regional data protection regulations (GDPR, CCPA)`
+• Google Sign-In data is managed according to Google's privacy policy
+• Apple Sign-In data is managed according to Apple's privacy policy
+• Inactive accounts may be deleted after extended periods
+• Individual data elements can be deleted selectively upon request`
     },
     {
       id: 'third_party',
       title: 'Third-Party Services',
       icon: FaLink,
-      content: `TrackaExpense integrates with carefully selected third-party services to enhance functionality:
+      content: `TrackaExpense uses the following third-party services:
 
-Google Firebase (Primary Infrastructure):
-• Firebase Authentication: Secure user registration and login
-• Firebase Firestore: Encrypted database for transaction storage
-• Firebase Storage: Secure file storage for receipt images
-• Firebase Cloud Functions: Serverless backend processing
-• Firebase Analytics: Anonymized usage statistics (opt-out available)
-• Subject to Google's Privacy Policy and Enterprise agreements
+Google Firebase:
+• Firebase Authentication for secure login/signup
+• Firebase Firestore for data storage
+• Firebase Storage for receipt images
+• Subject to Google's Privacy Policy
 
-Email Services:
-• Transactional email delivery for account verification and notifications
-• All emails are sent through secure, encrypted channels
-• Email addresses are not shared with marketing services
+Google Sign-In:
+• Google OAuth 2.0 for secure authentication
+• Google account integration for seamless sign-in
+• Google's privacy and security standards
+• Subject to Google's Terms of Service and Privacy Policy
 
-Device-Level Services:
-• Camera and photo library access (with explicit user permission)
-• Contact access (optional, only for friend invitation features)
-• Push notification services (device-specific, anonymized)
-• Local storage APIs for app preferences
+Apple Sign-In:
+• Apple OAuth 2.0 for secure authentication
+• Apple ID integration for seamless sign-in
+• Apple's privacy and security standards
+• Subject to Apple's Terms of Service and Privacy Policy
 
-Security & Monitoring:
-• Error tracking and crash reporting (anonymized data only)
-• Performance monitoring for app optimization
-• Security monitoring for fraud prevention
+Device Services:
+• Camera and photo library (with your permission)
+• Phone permissions (for device identification and security)
+• Local storage for app preferences
+• Network access for data synchronization
 
-Third-Party Commitments:
-• No data selling: We never sell your data to advertisers or data brokers
-• Minimal data sharing: Only necessary data is shared for core functionality
-• Due diligence: All third parties undergo security and privacy assessments
-• Contractual protections: All service providers bound by strict data protection agreements
-• Regular audits: We regularly review and audit third-party practices
+No Data Selling:
+We do not sell, trade, or rent your personal information to third parties. Any third-party integrations are solely for app functionality and are governed by their respective privacy policies.
 
-Analytics & Insights:
-• We may use anonymized, aggregated analytics to understand usage patterns
-• Individual user data is never included in analytics reports
-• All analytics data is opt-out available in app settings
-• No personally identifiable information is included in analytics`
+Analytics:
+We may use anonymized analytics to understand app usage patterns, but this data cannot be linked back to individual users.`
     },
     {
       id: 'user_rights',
       title: 'Your Rights & Choices',
       icon: FaUserCheck,
-      content: `You have comprehensive rights and control over your personal data:
+      content: `You have the following rights regarding your personal data:
 
-Access & Transparency:
-• View and download all your personal data at any time
-• Access detailed transaction history and financial records
-• Review all account settings and privacy preferences
-• Understand how your data is being used through this policy
+Access & Control:
+• View and edit your profile information
+• Download your transaction data
+• Modify or delete individual transactions
+• Update privacy preferences
+• Manage Google Sign-In account linking
 
-Data Control & Modification:
-• Edit or update your profile information instantly
-• Modify or delete individual transactions and receipts
-• Update privacy settings and data sharing preferences
-• Control notification preferences and communication settings
-• Manage group memberships and shared data visibility
+Authentication Management:
+• Switch between email/password, Google Sign-In, and Apple Sign-In
+• Unlink Google or Apple accounts from TrackaExpense
+• Manage authentication preferences
+• Control account recovery options
 
 Data Portability:
-• Export your financial data in standard formats (CSV, JSON)
-• Download all receipt images and attachments
-• Transfer your data to other financial management services
-• Request a complete archive of all your data
+• Export your financial data in standard formats
+• Transfer your data to other services
+• Request a complete copy of your data
+• Export Google Sign-In related data (subject to Google's policies)
+• Export Apple Sign-In related data (subject to Apple's policies)
 
-Deletion & Account Management:
-• Delete individual transactions, receipts, or data categories
-• Close your account and permanently delete all associated data
-• Use the in-app "Delete Account" feature for immediate removal
-• Request expedited data deletion through customer support
+Deletion Rights:
+• Delete individual transactions or receipts
+• Close your account and delete all associated data
+• Use the in-app account deletion feature for immediate removal
+• Request immediate data removal through customer support
+• Unlink Google or Apple accounts while keeping local data
 
 Account Deletion Process:
-1. Access "Profile" → "Account Settings" → "Delete Account"
-2. Complete the secure verification process with email confirmation
-3. Choose between temporary deactivation or permanent deletion
-4. All data permanently removed including transactions, receipts, groups
-5. Confirmation email sent once deletion is complete
-6. Account deletion is irreversible once completed
+• Access "Account Actions" in your profile settings
+• Complete the secure deletion process with confirmations
+• All data is permanently removed including transactions, receipts, and group memberships
+• Google Sign-In data is managed according to Google's account settings
+• Apple Sign-In data is managed according to Apple's account settings
+• Account deletion cannot be reversed once completed
 
-Privacy Controls:
+Consent Management:
 • Withdraw consent for data processing at any time
-• Opt out of optional data collection features
-• Control data sharing in group expense features
-• Manage cookie and tracking preferences
-• Set data retention preferences
+• Opt out of non-essential data collection
+• Control what information is shared in group features
+• Manage phone permission access
+• Control Google Sign-In and Apple Sign-In data sharing
 
-Communication Preferences:
-• Unsubscribe from promotional emails instantly
-• Control push notification types and frequency
-• Manage in-app communication preferences
-• Choose communication language and format
+Communication:
+• Unsubscribe from promotional emails
+• Control notification preferences
+• Limit communication types
 
-Legal Rights (varies by jurisdiction):
-• Right to rectification of inaccurate data
-• Right to restriction of processing
-• Right to object to data processing
-• Right to data portability
-• Right to lodge complaints with data protection authorities
+To exercise any of these rights, please contact us through the app's contact feature or email support.`
+    },
+    {
+      id: 'google_signin',
+      title: 'Google Sign-In, Apple Sign-In & Phone Permissions',
+      icon: FaGooglePlay,
+      content: `Google Sign-In Integration:
+We offer Google Sign-In as a convenient authentication method. When you choose to sign in with Google:
+• We access your Google account's basic profile information (name, email, profile picture)
+• We do not access your Google Drive, Gmail, or other Google services
+• Your Google account remains under your control and Google's privacy policies
+• You can unlink your Google account from TrackaExpense at any time
+• Google Sign-In uses OAuth 2.0 for secure authentication
 
-To exercise any of these rights:
-• Use in-app settings and controls
-• Contact our support team through the app
-• Email our Data Protection Officer
-• Response time: Within 72 hours for urgent requests, 30 days for complex requests`
+Apple Sign-In Integration:
+We offer Apple Sign-In as a convenient authentication method. When you choose to sign in with Apple:
+• We access your Apple ID's basic profile information (name, email, profile picture)
+• We do not access your iCloud, iMessage, or other Apple services
+• Your Apple ID remains under your control and Apple's privacy policies
+• You can unlink your Apple ID from TrackaExpense at any time
+• Apple Sign-In uses OAuth 2.0 for secure authentication
+
+Phone Permissions (Optional):
+We request phone permissions for the following purposes (all optional):
+• Device identification and security verification
+• Account recovery and verification processes
+• Enhanced security features and fraud prevention
+• Phone number verification for account security (optional)
+
+What We Do NOT Do:
+• We do not access your call logs or text messages
+• We do not make calls or send messages without your permission
+• We do not share your phone number with third parties
+• We do not use phone permissions for advertising or tracking
+
+Managing Permissions:
+• Phone permissions are optional and can be denied
+• You can revoke phone permissions through your device settings
+• Revoking permissions may limit some security features
+• You can still use the app with email/password, Google Sign-In, or Apple Sign-In authentication
+
+Data Security:
+• Phone numbers (if provided) are encrypted and stored securely
+• Google Sign-In data follows Google's security standards
+• Apple Sign-In data follows Apple's security standards
+• All authentication data is protected with industry-standard encryption
+• We regularly audit our security practices and update them as needed`
     },
     {
       id: 'children',
-      title: 'Children\'s Privacy Protection',
+      title: 'Children\'s Privacy',
       icon: FaBaby,
-      content: `TrackaExpense takes children's privacy seriously and complies with applicable child protection laws:
+      content: `TrackaExpense is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13.
 
-Age Restrictions:
-• TrackaExpense is not intended for children under 13 years old
-• We do not knowingly collect personal information from children under 13
-• Users between 13-18 may require parental consent depending on jurisdiction
-• Age verification is required during account registration
+If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately so we can delete such information.
 
-Child Protection Measures:
-• Enhanced privacy protections for users under 18
-• Limited data collection for minor users
-• Restricted communication features for young users
-• No targeted advertising to minors
-
-Parental Rights & Controls:
-• Parents can request access to their child's data
-• Account deletion requests honored immediately from verified parents
-• Parents can restrict certain app features for minor users
-• Educational resources available for parents about digital financial literacy
-
-Discovery of Child Data:
-If you are a parent or guardian and believe your child under 13 has provided us with personal information:
-• Contact us immediately through the app's support feature
-• Email our Data Protection Officer with details
-• We will delete such information promptly upon verification
-• No penalties or complications for reporting
-
-International Compliance:
-• COPPA (Children's Online Privacy Protection Act) compliance
-• GDPR-K (GDPR for children) compliance where applicable
-• Age of consent varies by country (13-16 years)
-• Local jurisdiction laws take precedence
-
-Educational Approach:
-• Age-appropriate financial literacy resources
-• Parental involvement in financial education
-• Safe introduction to money management concepts
-• Privacy-first approach to youth financial education
-
-Verification Processes:
-• Age verification required during registration
-• Parental consent mechanisms where legally required
-• Enhanced verification for sensitive financial features
-• Regular audits of user age verification systems`
+For users between 13-18, parental consent may be required depending on your jurisdiction's laws.`
     },
     {
       id: 'changes',
       title: 'Privacy Policy Updates',
       icon: FaSync,
-      content: `We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements:
+      content: `We may update this Privacy Policy from time to time to reflect:
+• Changes in our data practices
+• New features or services
+• Legal or regulatory requirements
+• Security improvements
 
-Reasons for Updates:
-• Changes in our data collection or processing practices
-• Introduction of new app features or services
-• Updates to legal or regulatory requirements
-• Enhanced security measures or privacy protections
-• User feedback and privacy improvement initiatives
+Notification:
+• We will notify you of significant changes through the app
+• Updated policies will be posted with a new "last updated" date
+• Continued use of the app constitutes acceptance of changes
 
-Notification Process:
-• Significant changes will be communicated through in-app notifications
-• Email notifications sent to registered users for major updates
-• Updated policy posted with clear "last updated" date
-• 30-day advance notice for material changes affecting data use
-• Opt-out options provided for new data uses requiring consent
-
-Types of Changes:
-• Minor updates: Clarifications, formatting, contact information updates
-• Major updates: Changes to data collection, use, or sharing practices
-• Legal updates: Compliance with new regulations or court orders
-• Feature updates: New privacy controls or data protection measures
-
-User Responses to Changes:
-• Continued app use constitutes acceptance of minor updates
-• Explicit consent required for material changes to data practices
-• Account deletion option always available if you disagree with changes
-• Granular consent options for new features or data uses
-
-Version Control:
-• All versions of the Privacy Policy are archived
-• Previous versions available upon request
-• Clear change logs maintained for transparency
-• Legal review required for all policy updates
-
-Implementation Timeline:
-• Policy updates take effect 30 days after notification
-• Grace period provided for users to review and respond
-• Technical implementation aligned with policy effective date
-• User education and support provided during transition periods
-
-Questions About Changes:
-• Contact support for clarification on policy updates
-• Data Protection Officer available for privacy-related questions
-• Community feedback encouraged on proposed changes
-• Regular policy review meetings with user representatives`
+Version History:
+You can always view the current version of our Privacy Policy within the app. Previous versions may be requested through customer support.`
     },
     {
       id: 'contact',
-      title: 'Contact & Support',
+      title: 'Contact Information',
       icon: FaEnvelope,
-      content: `We're committed to transparency and responsive communication about your privacy:
+      content: `If you have questions about this Privacy Policy or your data:
 
-Primary Contact Methods:
-• In-App Support: Use the "Contact Support" feature in your profile settings
-• Email Support: me@dhruvchheda.com (monitored 24/7)
-• Data Protection Officer: me@dhruvchheda.com
-• General Inquiries: me@dhruvchheda.com
-
-Response Commitments:
-• Privacy-related inquiries: Response within 24 hours
-• Data deletion requests: Processed within 72 hours
-• General support questions: Response within 48 hours
-• Complex technical issues: Resolution within 5 business days
-• Legal or compliance matters: Escalated immediately
+Contact Us Feature:
+Use the built-in contact feature in the app's Profile section to reach our support team directly.
 
 Data Protection Officer:
-• Available for all privacy-related questions and concerns
-• Handles data protection compliance and user rights requests
-• Manages privacy policy updates and implementation
-• Coordinates with legal teams for complex privacy matters
-• Direct contact available for sensitive privacy issues
+For privacy-specific inquiries, you can request to speak with our Data Protection Officer through the contact system.
 
-Support Languages:
-• English (primary support language)
-• Hindi, Tamil, Telugu (regional support available)
-• Translation services available for complex privacy matters
-• Multilingual resources and documentation
+Response Time:
+We aim to respond to all privacy-related inquiries within 48 hours.
 
-What to Include When Contacting Us:
-• Clear description of your privacy concern or question
-• Your account email address (for verification)
-• Relevant screenshots or documentation
-• Specific data or features you're asking about
-• Preferred response method and timeline
-
-Types of Support Available:
-• Privacy policy clarification and explanation
-• Data access, correction, and deletion requests
-• Account security and privacy settings help
-• Compliance and legal inquiry support
-• Technical privacy feature assistance
-
-Legal & Regulatory Contacts:
-• Compliance team for regulatory inquiries
-• Legal department for court orders or subpoenas
-• Security team for data breach or security concerns
-• Business team for partnership and integration privacy questions`
+Legal Requests:
+For legal or compliance requests, please include relevant documentation and specify the nature of your request.`
     }
   ];
 
@@ -572,7 +503,7 @@ Legal & Regulatory Contacts:
             Last updated: {new Date().toLocaleDateString()}
           </p>
           <p className="privacy-footer-text">
-            TrackaExpense v1.0.0
+            TrackaExpense v1.2.6
           </p>
           <p className="privacy-footer-text">
             <Link to="/">← Back to Home</Link>
