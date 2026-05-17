@@ -18,11 +18,6 @@ import {
 } from 'react-icons/fa';
 import './PrivacyPolicy.css';
 
-const PRIMARY_COLOR = '#6366f1';
-const BACKGROUND_COLOR = '#f8fafc';
-const TEXT_COLOR = '#1e293b';
-const SUBTITLE_COLOR = '#64748b';
-
 const PrivacyPolicy = () => {
   const [expandedSections, setExpandedSections] = useState({});
 
@@ -402,11 +397,6 @@ For legal or compliance requests, please include relevant documentation and spec
         )}
       </div>
     );
-  };
-
-  const handleContactSupport = () => {
-    // Navigate to contact page
-    window.location.href = '/contact';
   };
 
   const handleExternalLink = (url) => {
