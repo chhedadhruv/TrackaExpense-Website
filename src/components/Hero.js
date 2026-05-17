@@ -107,12 +107,10 @@ const Hero = () => (
       <div className="hero-grid">
         <div className="hero-content">
           <h1 className="hero-title">
-            Transform Your Financial Management with TrackaExpense
+            The Ad-Free Expense Tracker, Budget Planner &amp; Bill Splitter App
           </h1>
           <p className="hero-subtitle">
-            A comprehensive, ad-free personal finance app for managing expenses,
-            tracking income, and achieving your financial goals. Join thousands who've
-            taken control of their finances.
+            Track daily expenses, plan monthly budgets, split bills with friends, and hit savings goals — all in one free app. No ads. No upsells. Complete privacy.
           </p>
 
           <div className="hero-badges">
