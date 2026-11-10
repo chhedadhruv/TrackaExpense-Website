@@ -18,6 +18,11 @@ import {
 } from 'react-icons/fa';
 import './PrivacyPolicy.css';
 
+// Change these when the policy text or the app version changes (the date used to show today's
+// date on every visit).
+const LAST_UPDATED = '10 November 2026';
+const APP_VERSION = '1.4.0';
+
 const PrivacyPolicy = () => {
   const [expandedSections, setExpandedSections] = useState({});
 
@@ -39,7 +44,7 @@ const PrivacyPolicy = () => {
       icon: FaShieldAlt,
       content: `TrackaExpense is committed to protecting your privacy and personal information. This Privacy Policy explains how we collect, use, store, and protect your data when you use our expense tracking application.
 
-Last updated: ${new Date().toLocaleDateString()}
+Last updated: ${LAST_UPDATED}
 
 Your Privacy Rights:
 • You have complete control over your data
@@ -57,7 +62,7 @@ By using TrackaExpense, you agree to the collection and use of information in ac
 
 Personal Information:
 • Name and email address (required for account creation)
-• Phone number (optional, for account verification)
+• Phone number (optional, so friends can find you when adding you to a group)
 • Profile pictures (optional, stored securely)
 • Google account information (when using Google Sign-In)
 • Apple ID information (when using Apple Sign-In)
@@ -73,6 +78,10 @@ Group & Social Data:
 • Shared expense details and payment records
 • Split calculations and settlement information
 
+What Other People Can See:
+• Your name, profile picture and email address are visible to members of the groups you join
+• People who know your email address or phone number can find your account to add you to a group; only your name and profile picture are shown to them
+
 Authentication Data:
 • Email/password credentials (for traditional sign-in)
 • Google account credentials (for Google Sign-In)
@@ -85,6 +94,13 @@ Technical Information:
 • App usage patterns and navigation data
 • Local app preferences and settings
 • Network information for connectivity
+
+Usage and Diagnostics:
+• Which features you use (for example adding an expense or settling up), with coarse amount ranges and never exact amounts, titles, notes, names or email addresses
+• Crash and error reports from your device (app version, device model, operating system version)
+
+Device and Notification Data:
+• A push notification token and your user ID, so we can send you the notifications you allow
 
 Device Permissions:
 • Camera access (for receipt photos)
@@ -128,6 +144,7 @@ Communication:
 • Send account verification emails
 • Provide password reset functionality
 • Send notifications about account security
+• Send push notifications about your groups, splits, settlements and reminders (you can turn them off in your device settings)
 • Respond to feedback and support requests
 
 We do NOT use your financial data for advertising or sell your information to third parties.`
@@ -141,7 +158,7 @@ Your data is securely stored using Google Firebase services:
 • Authentication data is handled by Firebase Auth (including Google Sign-In and Apple Sign-In)
 • Financial records are stored in Firebase Firestore
 • Receipt images are stored in Firebase Storage
-• All data transmission is encrypted using industry-standard protocols
+• Data is encrypted in transit (HTTPS/TLS) and encrypted at rest by Google
 
 Local Storage:
 Some data is stored locally on your device:
@@ -151,7 +168,7 @@ Some data is stored locally on your device:
 • Authentication tokens (encrypted)
 
 Security Measures:
-• End-to-end encryption for data transmission
+• Encrypted connections for all data sent between the app and our services
 • Secure authentication using Firebase Auth, Google Sign-In, and Apple Sign-In
 • OAuth 2.0 protocol for Google and Apple authentication
 • Regular security updates and monitoring
@@ -175,6 +192,7 @@ Data Retention:
 • Your data is retained while your account is active
 • You can delete your account instantly through the app's "Account Actions" feature
 • Complete data removal includes all transactions, receipts, and associated files
+• Analytics, crash and notification records are handled as described under Your Rights & Choices
 • Google Sign-In data is managed according to Google's privacy policy
 • Apple Sign-In data is managed according to Apple's privacy policy
 • Inactive accounts may be deleted after extended periods
@@ -190,6 +208,8 @@ Google Firebase:
 • Firebase Authentication for secure login/signup
 • Firebase Firestore for data storage
 • Firebase Storage for receipt images
+• Cloud Functions for server-side processing of settlements, invitations and notifications
+• Cloud Messaging, Analytics, Crashlytics, Performance Monitoring and Remote Config for notification delivery, diagnostics and app settings
 • Subject to Google's Privacy Policy
 
 Google Sign-In:
@@ -204,6 +224,18 @@ Apple Sign-In:
 • Apple's privacy and security standards
 • Subject to Apple's Terms of Service and Privacy Policy
 
+Sentry (error reporting):
+• Receives crash and error reports with your user ID only, never your email address, name or IP address
+• Subject to Sentry's Privacy Policy
+
+Mixpanel (usage analytics):
+• Receives feature-usage events linked to your user ID, with IP-based location turned off
+• Subject to Mixpanel's Privacy Policy
+
+OneSignal (push notifications):
+• Receives your push token, user ID, platform, app version and currency setting in order to deliver notifications
+• Subject to OneSignal's Privacy Policy
+
 Device Services:
 • Camera and photo library (with your permission)
 • Phone permissions (for device identification and security)
@@ -214,7 +246,7 @@ No Data Selling:
 We do not sell, trade, or rent your personal information to third parties. Any third-party integrations are solely for app functionality and are governed by their respective privacy policies.
 
 Analytics:
-We may use anonymized analytics to understand app usage patterns, but this data cannot be linked back to individual users.`
+We use analytics to understand which features are used. Analytics events are linked to your user ID, never to your name, email address, notes, titles or exact amounts, and IP-based location is turned off.`
     },
     {
       id: 'user_rights',
@@ -256,6 +288,10 @@ Account Deletion Process:
 • Google Sign-In data is managed according to Google's account settings
 • Apple Sign-In data is managed according to Apple's account settings
 • Account deletion cannot be reversed once completed
+
+Analytics, Crash and Notification Records:
+• These records contain no names, email addresses or exact amounts and are linked only to your user ID
+• Contact us through the app or the contact page and we will delete them on request
 
 Consent Management:
 • Withdraw consent for data processing at any time
@@ -490,10 +526,10 @@ For legal or compliance requests, please include relevant documentation and spec
         {/* Footer */}
         <div className="privacy-footer">
           <p className="privacy-footer-text">
-            Last updated: {new Date().toLocaleDateString()}
+            Last updated: {LAST_UPDATED}
           </p>
           <p className="privacy-footer-text">
-            TrackaExpense v1.2.6
+            TrackaExpense v{APP_VERSION}
           </p>
           <p className="privacy-footer-text">
             <Link to="/">← Back to Home</Link>
