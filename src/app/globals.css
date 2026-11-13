@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 244 246 250;
+  --surface: 255 255 255;
+  --surface-muted: 236 239 248;
+  --border: 232 235 247;
+  --text: 44 44 44;
+  --text-secondary: 102 102 102;
+  --primary: 103 124 210;
+  --primary-text: 74 94 182;
+  --on-primary: 255 255 255;
+  --income: 30 154 109;
+  --expense: 246 78 78;
+  --warning: 199 119 0;
+  --shadow: 44 52 100;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: 18 19 22;
+  --surface: 28 30 34;
+  --surface-muted: 36 39 44;
+  --border: 43 46 51;
+  --text: 236 237 239;
+  --text-secondary: 168 172 180;
+  --primary: 103 124 210;
+  --primary-text: 142 160 230;
+  --on-primary: 255 255 255;
+  --income: 52 194 143;
+  --expense: 255 107 107;
+  --warning: 240 168 60;
+  --shadow: 0 0 0;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: 18 19 22;
+    --surface: 28 30 34;
+    --surface-muted: 36 39 44;
+    --border: 43 46 51;
+    --text: 236 237 239;
+    --text-secondary: 168 172 180;
+    --primary-text: 142 160 230;
+    --income: 52 194 143;
+    --expense: 255 107 107;
+    --warning: 240 168 60;
+    --shadow: 0 0 0;
+    color-scheme: dark;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply overflow-x-clip bg-bg font-sans text-text antialiased;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-heading font-semibold italic tracking-tight;
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--primary-text));
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
