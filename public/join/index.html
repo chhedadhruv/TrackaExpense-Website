@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4f46e5" />
+    <title>Join a group - TrackaExpense</title>
+    <meta name="description" content="Open this group invitation in the TrackaExpense app." />
+    <!-- An invite page, not content for search: keep it out of results, and never send the link
+         (which carries the invite secret in its fragment) on to other sites. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" href="/favicon.ico" />
+    <style>
+      :root {
+        --bg: #f4f5f9;
+        --surface: #ffffff;
+        --text: #222222;
+        --muted: #5b5f6b;
+        --primary: #4f46e5;
+        --on-primary: #ffffff;
+        --border: #e2e4ee;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121316;
+          --surface: #1c1d22;
+          --text: #f2f3f7;
+          --muted: #a7abb8;
+          --primary: #8b85f5;
+          --on-primary: #101014;
+          --border: #2c2e36;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 16px;
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      }
+      main {
+        width: 100%;
+        max-width: 420px;
+        padding: 32px 24px;
+        text-align: center;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+      }
+      h1 { margin: 0 0 12px; font-size: 1.6rem; line-height: 1.25; }
+      p { margin: 0 0 20px; color: var(--muted); line-height: 1.5; }
+      .button {
+        display: block;
+        width: 100%;
+        margin-top: 12px;
+        padding: 14px 18px;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .primary { background: var(--primary); color: var(--on-primary); }
+      .secondary { border: 1px solid var(--border); color: var(--text); }
+      .note { margin: 20px 0 0; font-size: 0.85rem; }
+      [hidden] { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section id="valid" hidden>
+        <h1>You are invited to a group</h1>
+        <p>Open this invitation in the TrackaExpense app to see the group and join it.</p>
+        <a id="open" class="button primary" href="#">Open in TrackaExpense</a>
+        <p class="note">Do not have the app yet?</p>
+        <a
+          class="button secondary"
+          href="https://play.google.com/store/apps/details?id=com.trackaexpense"
+          >Get it on Google Play</a
+        >
+        <a
+          class="button secondary"
+          href="https://apps.apple.com/us/app/trackaexpense/id6752925670"
+          >Get it on the App Store</a
+        >
+        <p class="note">
+          After installing, come back to this page and tap Open in TrackaExpense. The invitation
+          works for 7 days from when it was shared.
+        </p>
+      </section>
+      <section id="invalid" hidden>
+        <h1>This invite link is not valid</h1>
+        <p>
+          The link looks incomplete. Ask the person who invited you to share the link again, and
+          open it in full.
+        </p>
+        <a class="button secondary" href="/">Go to TrackaExpense</a>
+      </section>
+    </main>
+    <script>
+      (function () {
+        // The invite is in the URL fragment (#g=<group>&t=<token>): browsers never send a fragment
+        // to a server, so the secret stays out of web server logs. Nothing here is sent anywhere.
+        var params = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+        var group = params.get('g') || '';
+        var token = params.get('t') || '';
+        var valid =
+          /^[A-Za-z0-9_-]{1,128}$/.test(group) && /^[A-Za-z0-9_-]{22}$/.test(token);
+        document.getElementById(valid ? 'valid' : 'invalid').hidden = false;
+        if (!valid) {
+          return;
+        }
+        var appLink = 'trackaexpense://split/join/' + group + '/' + token;
+        document.getElementById('open').setAttribute('href', appLink);
+        // On Android try to open the app straight away; the button is there if the browser
+        // refuses to leave the page without a tap.
+        if (/android/i.test(navigator.userAgent)) {
+          window.setTimeout(function () {
+            window.location.href = appLink;
+          }, 400);
+        }
+      })();
+    </script>
+  </body>
+</html>
