@@ -1,4 +1,4 @@
-export const PRIVACY_LAST_UPDATED = '13 November 2026';
+export const PRIVACY_LAST_UPDATED = '18 November 2026';
 
 /**
  * Lines starting with "- " are bullets. Lines ending with ":" are sub-headings.
@@ -54,6 +54,12 @@ Device permissions:
 - Camera, only when you take a receipt photo
 - Notifications, only if you allow them
 - Choosing a photo from your gallery uses the system photo picker; the app does not get access to your whole photo library
+- The app does not read your text messages. The bank message screen only reads text you paste into it
+
+Receipt scanning and bank messages:
+- If you tap Scan receipt, the receipt photo you chose is read by Google Cloud Vision to find the amount, date and shop name. The photo is stored in your receipts folder as any receipt photo is. We do not keep the text that was read
+- A scan only fills in the form; nothing is saved until you add the expense yourself
+- A bank message you paste is read on your phone and is not sent anywhere. Nothing is saved until you confirm it
 
 Website data:
 - This website uses Vercel Analytics to count page views. It does not use cookies for advertising and does not track you across sites.
@@ -66,6 +72,7 @@ Website data:
 - Provide expense tracking and money management
 - Store your transactions and calculate your statistics
 - Enable splitting expenses with friends and groups
+- Work out budget alerts, recurring transactions and your weekly and monthly summaries on our servers from your transactions, and send them to you as notifications
 
 Account management:
 - Create and maintain your account and authenticate you
@@ -111,6 +118,10 @@ Google Firebase:
 - Authentication, Cloud Firestore, Cloud Storage, Cloud Functions, Cloud Messaging, Performance Monitoring and Remote Config
 - Subject to Google's Privacy Policy
 
+Google Cloud Vision (receipt scanning):
+- Reads a receipt photo only when you tap Scan receipt, to find the amount, date and shop name; we do not keep the text it reads
+- Subject to Google's Privacy Policy
+
 Google Sign-In and Apple Sign-In:
 - Used only to sign you in; we receive your name, email address and profile picture
 - Subject to Google's and Apple's own policies
@@ -122,7 +133,7 @@ Mixpanel (usage analytics):
 - Receives feature-usage events linked to your user ID, with IP-based location turned off
 
 OneSignal (push notifications):
-- Receives your push token, user ID, platform, app version and currency setting to deliver notifications
+- Receives your push token, user ID, platform, app version and currency setting to deliver notifications, and the text of each notification it delivers (for example a budget alert or a summary, which can include an amount and a category)
 
 Vercel (this website):
 - Hosts the website and provides page-view statistics

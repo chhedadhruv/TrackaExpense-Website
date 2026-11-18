@@ -9,8 +9,22 @@ export const metadata = pageMeta(
 
 const RELEASES = [
   {
+    version: '1.5.1 updates',
+    status: 'Delivered in the app',
+    notes: [
+      'Budgets: set a monthly or custom-period limit, in total or for one category, with alerts at 50, 80, 100 and 120 percent that you can switch on or off one by one.',
+      'Recurring transactions: rent, subscriptions and salary are logged on schedule, and you get a notification when one is added.',
+      'Group invite links: share a link to a group; the person sees the group and chooses to join, so a link never adds anyone by itself.',
+      'Savings goals are kept in one place, with a notification when you reach a goal.',
+      'Better CSV export: exact amounts, the currency and your tags in every row, and the export now covers everything that matches your filters, not only the newest rows. Group splits export as a proper CSV file too.',
+      'New notifications: a weekly summary on Sunday mornings, a monthly summary on the 1st, and a reminder when you have money to settle up.',
+      'Receipt scanning: add a receipt photo to an expense and tap Scan receipt to fill in the amount, date and shop. You check the details and add the expense yourself; nothing is saved automatically.',
+      'Bank message import: paste a message from your bank on the Profile screen to fill in an expense or income. The message is read on your phone and you confirm it before anything is saved.',
+    ],
+  },
+  {
     version: '1.5.1',
-    status: 'In preparation',
+    status: 'Released',
     notes: [
       'Group settle-up now shows every suggested payment.',
       'Adds the update channel so future fixes can reach the app without a full store update.',
