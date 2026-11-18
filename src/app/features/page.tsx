@@ -5,7 +5,7 @@ import { pageMeta } from '@/lib/metadata';
 
 export const metadata = pageMeta(
   'Features',
-  'Everything TrackaExpense does today: expense and income tracking, statistics, group splits, IOUs, savings goals, tags and receipts.',
+  'Everything TrackaExpense does today: expense and income tracking, budgets, recurring transactions, statistics, group splits, IOUs, savings goals, tags and receipt scanning.',
   '/features',
 );
 
@@ -19,7 +19,11 @@ const GROUPS = [
       'Category suggestions as you type',
       'Receipt photos from the camera or gallery, viewable full screen',
       'Tags, with search and filters by period, text or tag',
-      'Export your transactions as a CSV file',
+      'Scan a receipt to fill in the amount, date and shop, then check it before saving',
+      'Paste a bank message to fill in an expense or income, confirmed by you before anything is saved',
+      'Budgets with alerts at 50, 80, 100 and 120 percent',
+      'Recurring transactions for rent, subscriptions and salary',
+      'Export your transactions as a CSV file with exact amounts, currency and tags',
       'Over 20 currencies; INR is the default',
     ],
   },
@@ -41,12 +45,13 @@ const GROUPS = [
     image: '/screens/phone-5.jpg',
     alt: 'Group split and settle-up',
     points: [
-      'Groups with email invitations',
+      'Groups with email invitations or a shareable invite link',
       'Even or percentage splits that always sum to the total',
       'Suggested settle-up payments, recorded for both people',
       'Split history and a friends and balances overview',
       'IOUs for one-off loans',
-      'Push notifications for group activity',
+      'Push notifications for group activity, a weekly and monthly summary, and settle-up reminders',
+      'Group splits export as a CSV file',
     ],
   },
   {
@@ -58,6 +63,7 @@ const GROUPS = [
       'Deposit and withdraw, with a full history',
       'Months-left estimate at your current pace',
       'Optional reminders',
+      'A notification when you reach a goal',
     ],
   },
 ];
