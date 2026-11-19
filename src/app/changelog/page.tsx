@@ -20,6 +20,10 @@ const RELEASES = [
       'New notifications: a weekly summary on Sunday mornings, a monthly summary on the 1st, and a reminder when you have money to settle up.',
       'Receipt scanning: add a receipt photo to an expense and tap Scan receipt to fill in the amount, date and shop. You check the details and add the expense yourself; nothing is saved automatically.',
       'Bank message import: paste a message from your bank on the Profile screen to fill in an expense or income. The message is read on your phone and you confirm it before anything is saved.',
+      'Credit cards: add a card with its statement and due days, choose Paid with when you add an expense, and see what each card owes for the billing period. A card purchase leaves your balance alone until you mark the bill paid, and the payment is not counted as spending again.',
+      'Cards work across the app: recurring expenses, group splits and settle-up, a Paid with filter on Transactions, a Payment Method column in the CSV export and a By payment method view in Statistics. A bank message for a card payment picks the matching card.',
+      'Card bill reminders: a notification three days before and on the day a bill is due, and a list of bills to pay on Home.',
+      'Fix my balance: after a long gap, say what your balance really is and one Balance adjustment is added for the difference, without changing your income and expense totals. Home asks when splits have changed your balance for a while.',
     ],
   },
   {

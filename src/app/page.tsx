@@ -9,7 +9,7 @@ const TOUR = [
   {
     icon: Receipt,
     title: 'Log in seconds',
-    body: 'Add an expense or income with a category, tags and a receipt photo, and scan the receipt or paste a bank message to fill it in.',
+    body: 'Add an expense or income with a category, tags and a receipt photo, scan the receipt or paste a bank message to fill it in, and say if you paid with a credit card.',
   },
   {
     icon: BarChart3,
@@ -44,7 +44,7 @@ const STEPS = [
   { n: '3', title: 'Watch it add up', body: 'Statistics, balances and goals update as you go.' },
 ];
 
-const NEXT = ['Automatic SMS import on Android', 'Notification settings', 'Offline queue', 'Android home-screen widget'];
+const NEXT = ['Automatic SMS import on Android', 'Notification settings', 'Card bill from a message', 'Offline queue'];
 
 export default function Home() {
   const jsonLd = {

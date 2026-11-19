@@ -26,6 +26,8 @@ const COLUMNS = [
       { t: 'Summary and reminder notifications', d: 'A weekly and a monthly summary, and a reminder to settle up.' },
       { t: 'Receipt scanning', d: 'Photograph a receipt and review the amount, date and shop before anything is saved.' },
       { t: 'Bank message import', d: 'Paste a bank SMS to fill in an expense or income. It is read on your phone and you confirm it before anything is saved.' },
+      { t: 'Credit cards', d: 'Track what each card owes per billing period, pay a bill without counting it twice, and get due-date reminders. Works in recurring, splits and settle-up.' },
+      { t: 'Fix my balance', d: 'Match the app to your real balance after a long gap, without changing your income and expense totals.' },
     ],
   },
   {
@@ -34,6 +36,7 @@ const COLUMNS = [
     items: [
       { t: 'Automatic SMS import (Android)', d: 'Pick up bank messages on your phone, only with your permission. This depends on Google Play approving SMS access for the app.' },
       { t: 'Notification settings', d: 'Choose which reminders and nudges you receive.' },
+      { t: 'Card bill from a message', d: 'Paste a card statement message to fill in the total due and the due date.' },
     ],
   },
   {
