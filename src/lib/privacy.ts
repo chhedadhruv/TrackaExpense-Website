@@ -1,4 +1,4 @@
-export const PRIVACY_LAST_UPDATED = '18 November 2026';
+export const PRIVACY_LAST_UPDATED = '19 November 2026';
 
 /**
  * Lines starting with "- " are bullets. Lines ending with ":" are sub-headings.
@@ -32,6 +32,7 @@ Financial data:
 - Income and expense records (titles, descriptions, amounts, categories, tags, dates)
 - Receipt images you attach
 - Your account balance and savings goals
+- Credit cards you add: a name you choose, optionally the last four digits, and the statement and due days. We never ask for a full card number, expiry date or security code
 
 Group and social data:
 - Group memberships, shared expenses, splits and settlements
@@ -84,7 +85,7 @@ Improving the app:
 - Find and fix technical issues
 
 Notifications:
-- Send push notifications about your groups, splits, settlements and reminders; you can turn them off in your device settings
+- Send push notifications about your groups, splits, settlements, reminders and credit card bill due dates; you can turn them off in your device settings
 
 We do not use your financial data for advertising and we do not sell your information to anyone.`,
   },
