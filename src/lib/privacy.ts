@@ -50,6 +50,7 @@ Usage and diagnostics:
 
 Device and notification data:
 - A push notification token and your user ID, so we can send the notifications you allow
+- Your device's time zone (for example Asia/Kolkata), saved on your profile so that summaries and reminders reach you at your local time
 
 Device permissions:
 - Camera, only when you take a receipt photo
