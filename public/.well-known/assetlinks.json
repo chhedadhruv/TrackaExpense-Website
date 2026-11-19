@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.trackaexpense",
+      "sha256_cert_fingerprints": [
+        "64:11:F2:B6:3D:4C:AA:32:C5:93:86:61:9B:B1:4E:E4:41:8B:91:8A:20:29:E3:E9:AF:2D:E3:D7:11:DB:2A:19",
+        "40:7D:2E:9F:68:59:36:02:23:24:AA:00:A0:2E:49:08:DC:29:5C:A5:40:CB:C4:99:87:8C:02:75:C0:7E:46:23"
+      ]
+    }
+  }
+]
