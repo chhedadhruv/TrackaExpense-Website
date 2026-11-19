@@ -24,6 +24,9 @@ const RELEASES = [
       'Cards work across the app: recurring expenses, group splits and settle-up, a Paid with filter on Transactions, a Payment Method column in the CSV export and a By payment method view in Statistics. A bank message for a card payment picks the matching card.',
       'Card bill reminders: a notification three days before and on the day a bill is due, and a list of bills to pay on Home.',
       'Fix my balance: after a long gap, say what your balance really is and one Balance adjustment is added for the difference, without changing your income and expense totals. Home asks when splits have changed your balance for a while.',
+      'Notification settings: under Notifications on the Profile screen you can switch the evening reminder, a short nudge to log your spending, and the card bill reminders on or off.',
+      'Notifications at your local time: the app now keeps your phone\'s time zone on your profile, so the weekly and monthly summaries and the reminders arrive at the right hour wherever you are.',
+      'Receipt scanning for currencies without decimals: Scan receipt now reads whole-number amounts when your currency is Japanese yen or Korean won.',
     ],
   },
   {

@@ -44,7 +44,7 @@ const STEPS = [
   { n: '3', title: 'Watch it add up', body: 'Statistics, balances and goals update as you go.' },
 ];
 
-const NEXT = ['Automatic SMS import on Android', 'Notification settings', 'Card bill from a message', 'Offline queue'];
+const NEXT = ['Automatic SMS import on Android', 'More notification settings', 'Card bill from a message', 'Offline queue'];
 
 export default function Home() {
   const jsonLd = {
