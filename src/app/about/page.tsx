@@ -31,6 +31,7 @@ export default function AboutPage() {
             <li>Amounts are stored in whole minor units, so splits and balances add up exactly.</li>
             <li>Settlements and invitations are handled on the server so both sides stay consistent.</li>
             <li>The app asks only for the permissions it needs.</li>
+            <li>Your data stays yours: a no-account mode that keeps everything on your phone is in development.</li>
           </ul>
           <h2>The person behind it</h2>
           <p>

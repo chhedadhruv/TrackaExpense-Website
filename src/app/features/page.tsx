@@ -16,7 +16,9 @@ const GROUPS = [
     alt: 'Add expense screen with a receipt photo',
     points: [
       'Add, edit and delete expenses and income',
-      'Category suggestions as you type',
+      'Category suggestions as you type, learned from your own past titles',
+      'Title autocomplete from your past entries, which also offers the category you used last time',
+      'Your own categories for expenses, income and savings goals, with an icon; hide, reorder and rename them',
       'Receipt photos from the camera or gallery, viewable full screen',
       'Tags, with search and filters by period, text or tag',
       'Scan a receipt to fill in the amount, date and shop, then check it before saving; works with currencies that have no decimals, such as yen and won',
@@ -56,6 +58,7 @@ const GROUPS = [
       'Push notifications for group activity, a weekly and monthly summary, and settle-up reminders, timed to your own time zone',
       'Switch the evening reminder and the card bill reminders on or off from Profile',
       'Group splits export as a CSV file',
+      'Invite links open straight in the app on Android',
     ],
   },
   {
@@ -99,6 +102,17 @@ export default function FeaturesPage() {
             </div>
           </section>
         ))}
+
+        <section className="rounded-card border border-border bg-surface p-8 shadow-card">
+          <h2 className="text-3xl">Coming soon</h2>
+          <p className="mt-3 text-text-secondary">Built and being tested, not in the store release yet.</p>
+          <ul className="mt-5 space-y-3 text-text-secondary">
+            <li>Continue without an account: keep expenses, income, budgets, cards and goals only on your phone, with nothing sent to a server</li>
+            <li>Add, edit and delete transactions offline, synced when you reconnect</li>
+            <li>Read bank messages from your inbox on Android, only with your permission and only on your phone</li>
+            <li>A Usage analytics switch in Profile</li>
+          </ul>
+        </section>
 
         <section className="rounded-card border border-border bg-surface p-8 shadow-card">
           <h2 className="text-3xl">And the basics, done properly</h2>
