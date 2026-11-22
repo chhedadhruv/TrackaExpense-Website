@@ -5,7 +5,7 @@ export const SITE = {
   tagline: 'Track expenses. Split bills. Reach your goals.',
   description:
     'TrackaExpense is an expense tracker with group bill splitting, savings goals and clear statistics, for Android.',
-  version: '1.5.1',
+  version: '1.6.0',
 } as const;
 
 export const STORE_LINKS = {

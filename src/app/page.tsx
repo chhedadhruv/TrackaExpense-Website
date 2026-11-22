@@ -1,4 +1,4 @@
-import { ArrowRight, BarChart3, Moon, PiggyBank, Receipt, Tag, Users } from 'lucide-react';
+import { ArrowRight, BarChart3, Moon, PiggyBank, Receipt, ShieldCheck, Tag, Users } from 'lucide-react';
 import Link from 'next/link';
 import { PhoneFrame } from '@/components/PhoneFrame';
 import { StoreButtons } from '@/components/StoreButtons';
@@ -9,7 +9,7 @@ const TOUR = [
   {
     icon: Receipt,
     title: 'Log in seconds',
-    body: 'Add an expense or income with a category, tags and a receipt photo, scan the receipt or paste a bank message to fill it in, and say if you paid with a credit card.',
+    body: 'Add an expense or income with a category the app suggests, tags and a receipt photo, scan the receipt or paste a bank message to fill it in, and say if you paid with a credit card.',
   },
   {
     icon: BarChart3,
@@ -29,7 +29,7 @@ const TOUR = [
   {
     icon: Tag,
     title: 'Find anything',
-    body: 'Tag transactions and search or filter by period, text or tag.',
+    body: 'Tag transactions, reuse past titles with autocomplete, and search or filter by period, text or tag. Add your own categories too.',
   },
   {
     icon: Moon,
@@ -44,7 +44,12 @@ const STEPS = [
   { n: '3', title: 'Watch it add up', body: 'Statistics, balances and goals update as you go.' },
 ];
 
-const NEXT = ['Automatic SMS import on Android', 'More notification settings', 'Card bill from a message', 'Offline queue'];
+const NEXT = [
+  'Use without an account',
+  'Offline saves',
+  'Bank messages from your inbox on Android',
+  'More notification settings',
+];
 
 export default function Home() {
   const jsonLd = {
@@ -146,6 +151,32 @@ export default function Home() {
       </section>
 
       <section>
+        <Container className="py-16">
+          <div className="grid items-center gap-8 rounded-card border border-border bg-surface p-8 shadow-card md:grid-cols-[auto_1fr] md:p-12">
+            <div className="grid h-14 w-14 place-items-center rounded-xl bg-surface-muted text-primary-text">
+              <ShieldCheck size={28} />
+            </div>
+            <div>
+              <Eyebrow>Coming soon</Eyebrow>
+              <h2 className="text-3xl">No account? No problem.</h2>
+              <p className="mt-4 max-w-2xl text-text-secondary">
+                Soon you can choose Continue without an account. Your expenses, income, budgets, cards and
+                savings goals stay on your phone, and nothing is sent to a server. Analytics, error
+                reports and notifications stay off. Sign in later whenever you want splits and cloud
+                backup.
+              </p>
+              <Link
+                href="/roadmap"
+                className="mt-5 inline-flex items-center gap-2 font-bold text-primary-text hover:underline"
+              >
+                See what is in development <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section>
         <Container className="py-20">
           <Eyebrow>How it works</Eyebrow>
           <h2 className="text-3xl sm:text-4xl">Up and running in a minute.</h2>
@@ -172,7 +203,7 @@ export default function Home() {
               <p className="mt-4 text-text-secondary">
                 Your transactions are stored in your own account, protected by security rules. The app
                 asks only for the permissions it needs, and you can delete your account and data from
-                inside the app.
+                inside the app. A switch to turn usage analytics off is on the way.
               </p>
               <Link
                 href="/privacy"

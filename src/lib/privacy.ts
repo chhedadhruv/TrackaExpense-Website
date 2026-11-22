@@ -1,4 +1,4 @@
-export const PRIVACY_LAST_UPDATED = '19 November 2026';
+export const PRIVACY_LAST_UPDATED = '22 November 2026';
 
 /**
  * Lines starting with "- " are bullets. Lines ending with ":" are sub-headings.
@@ -31,6 +31,7 @@ By using TrackaExpense, you agree to the collection and use of information in ac
 Financial data:
 - Income and expense records (titles, descriptions, amounts, categories, tags, dates)
 - Receipt images you attach
+- Custom categories you create, with the icon you pick
 - Your account balance and savings goals
 - Credit cards you add: a name you choose, optionally the last four digits, and the statement and due days. We never ask for a full card number, expiry date or security code
 
@@ -133,7 +134,6 @@ Sentry (error reporting):
 
 Mixpanel (usage analytics):
 - Receives feature-usage events linked to your user ID, with IP-based location turned off
-
 OneSignal (push notifications):
 - Receives your push token, user ID, platform, app version and currency setting to deliver notifications, and the text of each notification it delivers (for example a budget alert or a summary, which can include an amount and a category)
 

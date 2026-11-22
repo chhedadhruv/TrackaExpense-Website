@@ -6,7 +6,7 @@ import { SITE } from '@/lib/site';
 
 export const metadata = pageMeta(
   'FAQ',
-  'Answers about platforms, data, currencies, group splits and deleting your account.',
+  'Answers about platforms, data, offline use, categories, currencies, group splits and deleting your account.',
   '/faq',
 );
 
@@ -18,6 +18,22 @@ const ITEMS = [
   {
     q: 'How do I sign in?',
     a: 'With an email and password, or with your Google account.',
+  },
+  {
+    q: 'Can I use it without an account?',
+    a: 'Soon. A coming update adds Continue without an account: your expenses, income, budgets, cards and savings goals stay on your phone and nothing is sent to a server. Groups and splits still need an account, and you can sign in later.',
+  },
+  {
+    q: 'Does it work offline?',
+    a: 'You can open the app and see your last data without a connection. Adding, editing and deleting transactions offline, synced when you reconnect, is in development.',
+  },
+  {
+    q: 'Does the app read my text messages?',
+    a: 'Not today. You can paste a bank message to fill in a transaction. A coming Android update can find bank payments in your inbox, but only after an explanation and your permission, and the messages are read on your phone and never sent anywhere.',
+  },
+  {
+    q: 'Can I add my own categories?',
+    a: 'Yes. Add expense, income and savings goal categories with an icon from Profile or the category picker, and hide or reorder the built-in ones.',
   },
   {
     q: 'Where is my data stored?',

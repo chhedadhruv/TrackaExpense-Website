@@ -9,6 +9,29 @@ export const metadata = pageMeta(
 
 const RELEASES = [
   {
+    version: 'In development',
+    status: 'Not released yet',
+    notes: [
+      'Use without an account: choose Continue without an account and your expenses, income, budgets, cards and savings goals stay on your phone. Nothing is sent to a server, and analytics, error reports and notifications stay off. Splits need an account. You can sign in later, or erase everything on the phone from Profile.',
+      'Offline saves: add, edit and delete a transaction without a connection; it is saved on the phone and syncs when you are back online. A banner shows when you are offline.',
+      'Bank messages from your inbox (Android): after you accept an explanation and allow the permission, the app finds bank payments in your messages and offers to fill in an expense or income. Messages are read on the phone and go nowhere, and nothing is saved until you confirm it. This depends on Google Play approving SMS access.',
+      'A Usage analytics switch under Privacy on the Profile screen, so you can turn usage statistics off.',
+    ],
+  },
+  {
+    version: '1.6.0',
+    status: 'Released',
+    notes: [
+      'Custom categories: add your own expense and income categories with an icon, hide built-in ones and reorder each list, from Profile or from inside the category picker. Renaming a category moves your past entries, recurring rules and budgets with it.',
+      'Custom categories for savings goals, in a Goals tab next to the others.',
+      'Smarter category suggestions: the app matches whole words and learns from your own past titles, with a Suggested row and search in the picker.',
+      'Title autocomplete: past titles that match what you type appear as chips; pick one to fill the title and the category you used last time. Works on expenses, income, recurring transactions and splits.',
+      'Group invite links now open straight in the app on Android.',
+      'A themed icon for Android 13 and newer.',
+      'Fix: the settle-up reminder now uses each person\'s overall balance across groups.',
+    ],
+  },
+  {
     version: '1.5.1 updates',
     status: 'Delivered in the app',
     notes: [

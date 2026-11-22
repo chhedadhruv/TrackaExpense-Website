@@ -28,16 +28,23 @@ const COLUMNS = [
       { t: 'Bank message import', d: 'Paste a bank SMS to fill in an expense or income. It is read on your phone and you confirm it before anything is saved.' },
       { t: 'Credit cards', d: 'Track what each card owes per billing period, pay a bill without counting it twice, and get due-date reminders. Works in recurring, splits and settle-up.' },
       { t: 'Fix my balance', d: 'Match the app to your real balance after a long gap, without changing your income and expense totals.' },
+      { t: 'Custom categories', d: 'Your own expense, income and savings goal categories, with hiding, reordering and renaming that carries your history along.' },
+      { t: 'Faster entry', d: 'Smarter category suggestions and title autocomplete from your own past entries.' },
+      { t: 'Invite links open in the app', d: 'On Android, a shared group link opens straight in TrackaExpense.' },
       { t: 'Reminder switches', d: 'Turn the evening reminder and the card bill reminders on or off from Profile.' },
     ],
   },
   {
     label: 'Next',
-    note: 'Planned, in design or early build',
+    note: 'Built or in progress, not released yet',
     items: [
-      { t: 'Automatic SMS import (Android)', d: 'Pick up bank messages on your phone, only with your permission. This depends on Google Play approving SMS access for the app.' },
+      { t: 'Use without an account', d: 'Keep expenses, income, budgets, cards and goals only on your phone, with nothing sent to a server. Splits will still need an account.' },
+      { t: 'Offline saves', d: 'Add, edit and delete transactions without a connection and sync later. Settle-up, card bill payments and receipt photos offline come after that.' },
+      { t: 'Bank messages from your inbox (Android)', d: 'Find bank payments in your messages and fill in an expense, only with your permission and read on your phone. This depends on Google Play approving SMS access.' },
+      { t: 'Usage analytics switch', d: 'Turn usage statistics off from Profile.' },
       { t: 'More notification settings', d: 'Choose which summaries and reminders you receive. Today you can switch the evening reminder and the card bill reminders on or off.' },
       { t: 'Card bill from a message', d: 'Paste a card statement message to fill in the total due and the due date.' },
+      { t: 'Credit limit view', d: 'See how much of each card\'s limit you have used.' },
     ],
   },
   {
@@ -45,7 +52,6 @@ const COLUMNS = [
     note: 'Ideas we intend to explore',
     items: [
       { t: 'PDF export', d: 'A tidy report alongside the CSV export.' },
-      { t: 'Offline queue', d: 'Add transactions without a connection and sync when you are back.' },
       { t: 'Android home-screen widget', d: 'Your balance at a glance.' },
       { t: 'iOS', d: 'An iPhone version is on hold until the build pipeline is ready.' },
     ],
