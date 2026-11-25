@@ -13,7 +13,7 @@ export function StoreButtons({ align = 'start' }: { align?: 'start' | 'center' }
         href={STORE_LINKS.appStore}
         className="inline-flex items-center rounded-full border border-border bg-surface px-6 py-3 font-bold text-text transition hover:bg-surface-muted"
       >
-        App Store
+        Download on the App Store
       </a>
     </div>
   );

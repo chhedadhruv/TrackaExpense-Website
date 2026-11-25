@@ -4,13 +4,13 @@ export const SITE = {
   email: 'me@dhruvchheda.com',
   tagline: 'Track expenses. Split bills. Reach your goals.',
   description:
-    'TrackaExpense is an expense tracker with group bill splitting, savings goals and clear statistics, for Android.',
+    'TrackaExpense is an expense tracker with group bill splitting, savings goals and clear statistics, for Android and iPhone.',
   version: '1.6.0',
 } as const;
 
 export const STORE_LINKS = {
   play: 'https://play.google.com/store/apps/details?id=com.trackaexpense',
-  appStore: 'https://apps.apple.com/us/app/trackaexpense/id6752925670',
+  appStore: 'https://apps.apple.com/us/app/trackaexpense-expense-tracker/id6752925670',
 } as const;
 
 export const SOCIAL = {
