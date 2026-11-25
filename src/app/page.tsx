@@ -39,7 +39,7 @@ const TOUR = [
 ];
 
 const STEPS = [
-  { n: '1', title: 'Sign in', body: 'Use email or your Google account.' },
+  { n: '1', title: 'Sign in', body: 'Use email or your Google account, or Apple on iPhone.' },
   { n: '2', title: 'Add your first expense', body: 'Pick a category, set an amount, attach a receipt if you like.' },
   { n: '3', title: 'Watch it add up', body: 'Statistics, balances and goals update as you go.' },
 ];
@@ -56,7 +56,7 @@ export default function Home() {
     '@context': 'https://schema.org',
     '@type': 'MobileApplication',
     name: SITE.name,
-    operatingSystem: 'Android',
+    operatingSystem: 'Android, iOS',
     applicationCategory: 'FinanceApplication',
     description: SITE.description,
     url: SITE.url,
@@ -81,7 +81,7 @@ export default function Home() {
             <div className="mt-8">
               <StoreButtons />
             </div>
-            <p className="mt-4 text-sm text-text-secondary">Available on Android.</p>
+            <p className="mt-4 text-sm text-text-secondary">Available on Android and iPhone.</p>
           </div>
           <div className="relative min-w-0">
             <div

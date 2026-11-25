@@ -13,7 +13,7 @@ export const metadata = pageMeta(
 const ITEMS = [
   {
     q: 'Which platforms does TrackaExpense support?',
-    a: 'Android today. An iPhone version is planned but not available yet.',
+    a: 'Android and iPhone. Get it on Google Play or the App Store.',
   },
   {
     q: 'How do I sign in?',

@@ -52,9 +52,7 @@ const COLUMNS = [
     note: 'Ideas we intend to explore',
     items: [
       { t: 'PDF export', d: 'A tidy report alongside the CSV export.' },
-      { t: 'Android home-screen widget', d: 'Your balance at a glance.' },
-      { t: 'iOS', d: 'An iPhone version is on hold until the build pipeline is ready.' },
-    ],
+      { t: 'Android home-screen widget', d: 'Your balance at a glance.' },    ],
   },
 ];
 
